@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 //images
 import Search from "../../assets/search.png";
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <div className="search">
@@ -12,7 +15,9 @@ function Header() {
         <input type="text" name="search" id="search" placeholder="Search on lending..." />
       </div>
       <Navigation>
-        <div className="item">Course Selection</div>
+        <div className="item" onClick={() => navigate("/courses")}>
+          Course Selection
+        </div>
         <div className="item">Career Guidence</div>
         <div className="item">Financial plan</div>
         <div className="item">Risk analysis</div>
