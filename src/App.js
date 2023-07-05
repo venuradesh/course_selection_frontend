@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Components/Screens/Home";
 import Header from "./Components/Parts/Header";
 import Course from "./Components/Screens/Course";
+import Courses from "./Components/Screens/Courses";
+import CourseQuestions from "./Components/Screens/CourseQuestions";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/course" element={<Course />} />
+            <Route exact path="/courses" element={<Courses />} />
+            <Route exact path="/coursequestions" element={<CourseQuestions />} />
           </Routes>
         </div>
       </Router>
