@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600&family=Poppins:wght@400;500;700&display=swap");
+
+:root {
+  --dark-blue: #243773;
+  --blue-btn: #0554f2;
+  --blue-btn-alt: #056cf2;
+  --btn-danger: #f23847;
+  --btn-danger-alt: #f23838;
+  --text-clr: #262626;
+  --text-clr-dark: #262626;
+  --light-gray: #f2f2f2;
+
+  --font-normal: "Poppins", sans-serif;
+  --font-heading: "Fira Sans Condensed", sans-serif;
+
+  --font-w-n: 400;
+  --font-w-h: 600;
+  --font-w-dh: 700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-normal);
+  font-weight: var(--font-w-n);
+  color: var(--text-clr);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
