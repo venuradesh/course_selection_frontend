@@ -30,7 +30,8 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-inline: 30px;
-  box-shadow: 0 2px 10px 0 var(--light-gray);
+  box-shadow: 0 2px 10px 0 var(--medium-gray);
+  background-color: white;
 
   .search {
     display: flex;
@@ -76,5 +77,10 @@ const Navigation = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
