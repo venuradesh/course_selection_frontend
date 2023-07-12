@@ -15,6 +15,36 @@ function Home() {
         <div className="background"></div>
         <Cover></Cover>
       </div>
+      <div className="filtering">
+        <select defaultValue={"budget"}>
+          <option value="budget" hidden>
+            <div className="filter-options">Budget Range</div>
+          </option>
+        </select>
+        <select defaultValue={"duration"}>
+          <option value="duration" hidden>
+            <div className="filter-options">Degree Duration Selection</div>
+          </option>
+        </select>
+        <select defaultValue={"al-result"}>
+          <option value={"al-result"} hidden>
+            <div className="filter-options">A/L Passes</div>
+          </option>
+        </select>
+        <select defaultValue={"al-stream"}>
+          <option value={"al-stream"} hidden>
+            <div className="filter-options">A/L Stream Dropdown</div>
+          </option>
+        </select>
+        <select defaultValue={"interest"}>
+          <option value={"interest"} hidden>
+            <div className="filter-options">Interest Area Dropdown</div>
+          </option>
+          <option value={""} hidden>
+            <div className="filter-options"></div>
+          </option>
+        </select>
+      </div>
       <div className="courses">
         {courses.map((course, key) => (
           <CourseCard key={key} header={course.name} specialization={course.specilization} details={course} />
@@ -41,6 +71,23 @@ const Container = styled.div`
       height: 100%;
       background-image: linear-gradient(to bottom, white, transparent);
       position: absolute;
+    }
+  }
+
+  .filtering {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    column-gap: 20px;
+
+    select {
+      flex: 1;
+      padding-inline: 20px;
+      background-color: white;
+      border: none;
+      box-shadow: 0 0 2px 0 var(--medium-gray);
+      font-size: 0.8rem;
     }
   }
 
