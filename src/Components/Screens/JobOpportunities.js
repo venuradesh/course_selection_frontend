@@ -1,13 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { BarChart, Bar, XAxis, YAxis, Text } from "recharts";
 
 //images
 import JobCover from "../../assets/job-cover.jpg";
 
 //components
-import CourseCard from "../Parts/CourseCard";
 import JobCard from "../Parts/JobCard";
 
 //data
@@ -15,22 +13,13 @@ import array from "../Data/Jobs";
 
 function JobOpportunities() {
   const naviagte = useNavigate();
-  const data = [
-    { name: "Software Engineer Intern", uv: 400, pv: 2400, amt: 2400 },
-    { name: "Software Engineering-Intern", uv: 300, pv: 2400, amt: 2400 },
-    { name: "Associate Software Engineering", uv: 200, pv: 2400, amt: 2400 },
+  const links = [
+    { name: "Software Engineering", link: "#" },
+    { name: "Associate Software Engineering", link: "#" },
+    { name: "Intern Software Engineering", link: "#" },
+    { name: "Tech Lead", link: "#" },
+    { name: "Project Management", link: "#" },
   ];
-
-  const CustomXAxisTick = ({ x, y, payload, width }) => {
-    if (payload?.value) {
-      return (
-        <Text width={width} x={x} y={y} textAnchor="middle" verticalAnchor="start">
-          {payload.value}
-        </Text>
-      );
-    }
-    return null;
-  };
 
   return (
     <Container>
@@ -49,11 +38,11 @@ function JobOpportunities() {
           ))}
         </div>
         <div className="trending-jobs">
-          <BarChart width={400} height={200} data={data}>
-            <XAxis data={data} tick={<CustomXAxisTick />} />
-            <YAxis />
-            <Bar dataKey="uv" barSize={30} fill="#8884d8" />
-          </BarChart>
+          {links.map((link) => (
+            <div className="link" onClick={() => naviagte(link.link)}>
+              Click here to learn about {link.name}
+            </div>
+          ))}
         </div>
       </div>
     </Container>
@@ -136,21 +125,20 @@ const Container = styled.div`
       height: 120%;
       display: flex;
       align-items: center;
+      flex-direction: column;
+      max-height: 400px;
+      overflow-y: overlay;
 
-      /* .recharts-surface {
-        height: 100%;
-      }
+      .link {
+        margin-top: 10px;
+        font-size: 0.8rem;
+        color: var(--blue-btn);
+        cursor: pointer;
 
-      .recharts-wrapper {
-        height: 100%;
-
-        .xAxis {
-          .recharts-text {
-            transform: translateY(100px) rotateZ(90);
-            z-index: 100;
-          }
+        &:hover {
+          text-decoration: underline;
         }
-      } */
+      }
     }
   }
 `;
