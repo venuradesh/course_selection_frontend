@@ -8,7 +8,6 @@ import CourseCard from "../Parts/CourseCard";
 function Course() {
   const location = useLocation();
   const naviagte = useNavigate();
-  console.log(location.state);
 
   return (
     <Container>

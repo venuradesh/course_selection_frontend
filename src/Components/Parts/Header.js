@@ -18,9 +18,15 @@ function Header() {
         <div className="item" onClick={() => navigate("/courses")}>
           Course Selection
         </div>
-        <div className="item">Career Guidence</div>
-        <div className="item">Financial plan</div>
-        <div className="item">Risk analysis</div>
+        <div className="item" onClick={() => navigate("/career")}>
+          Career Guidence
+        </div>
+        <div className="item" onClick={() => navigate("/financial")}>
+          Financial plan
+        </div>
+        <div className="item" onClick={() => navigate("/riskanalysis")}>
+          Risk analysis
+        </div>
       </Navigation>
     </Container>
   );

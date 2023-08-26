@@ -8,6 +8,12 @@ import Header from "./Components/Parts/Header";
 import Course from "./Components/Screens/Course";
 import Courses from "./Components/Screens/Courses";
 import CourseQuestions from "./Components/Screens/CourseQuestions";
+import JobOpportunities from "./Components/Screens/JobOpportunities";
+import JobDetails from "./Components/Screens/JobDetails";
+import RiskCalculator from "./Components/Screens/RiskCalculator";
+import FinancialPlan from "./Components/Screens/FinancialPlan";
+import ScholarshipDetails from "./Components/Screens/ScholarshipDetails";
+import Loan from "./Components/Screens/Loan";
 
 function App() {
   return (
@@ -21,7 +27,13 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/course" element={<Course />} />
             <Route exact path="/courses" element={<Courses />} />
+            <Route exact path="/career" element={<JobOpportunities />} />
+            <Route exact path="/career/:id" element={<JobDetails />} />
             <Route exact path="/coursequestions" element={<CourseQuestions />} />
+            <Route exact path="/riskanalysis" element={<RiskCalculator />} />
+            <Route exact path="/financial" element={<FinancialPlan />} />
+            <Route exact path="/financial/:id" element={<ScholarshipDetails />} />
+            <Route exact path="/loanapply" element={<Loan />} />
           </Routes>
         </div>
       </Router>
