@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { BarChart, Bar, XAxis, YAxis, Text } from "recharts";
 
 //images
 import JobCover from "../../assets/job-cover.jpg";
@@ -14,6 +15,22 @@ import array from "../Data/Jobs";
 
 function JobOpportunities() {
   const naviagte = useNavigate();
+  const data = [
+    { name: "Software Engineer Intern", uv: 400, pv: 2400, amt: 2400 },
+    { name: "Software Engineering-Intern", uv: 300, pv: 2400, amt: 2400 },
+    { name: "Associate Software Engineering", uv: 200, pv: 2400, amt: 2400 },
+  ];
+
+  const CustomXAxisTick = ({ x, y, payload, width }) => {
+    if (payload?.value) {
+      return (
+        <Text width={width} x={x} y={y} textAnchor="middle" verticalAnchor="start">
+          {payload.value}
+        </Text>
+      );
+    }
+    return null;
+  };
 
   return (
     <Container>
@@ -31,7 +48,13 @@ function JobOpportunities() {
             <JobCard header={item.header} link={item.id} />
           ))}
         </div>
-        <div className="trending-jobs"></div>
+        <div className="trending-jobs">
+          <BarChart width={400} height={200} data={data}>
+            <XAxis data={data} tick={<CustomXAxisTick />} />
+            <YAxis />
+            <Bar dataKey="uv" barSize={30} fill="#8884d8" />
+          </BarChart>
+        </div>
       </div>
     </Container>
   );
@@ -110,7 +133,24 @@ const Container = styled.div`
 
     .trending-jobs {
       flex: 1;
-      /* background-color: red; */
+      height: 120%;
+      display: flex;
+      align-items: center;
+
+      /* .recharts-surface {
+        height: 100%;
+      }
+
+      .recharts-wrapper {
+        height: 100%;
+
+        .xAxis {
+          .recharts-text {
+            transform: translateY(100px) rotateZ(90);
+            z-index: 100;
+          }
+        }
+      } */
     }
   }
 `;
