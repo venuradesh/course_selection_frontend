@@ -21,7 +21,13 @@ function Course() {
           <div className="desc">{location.state.desc}</div>
         </div>
         <div className="course-cover">
-          <img src={location.state.cover} alt="course-cover" />
+          <div className="item">
+            Price: <span>Rs. 2,000,000</span>
+          </div>
+          <div className="duration item">
+            Duration: <span>4 Years</span>
+          </div>
+          {/* <img src={location.state.cover} alt="course-cover" /> */}
         </div>
       </div>
       <div className="card-container">
@@ -102,9 +108,18 @@ const Container = styled.div`
     .course-cover {
       width: 35%;
 
-      img {
-        width: 100%;
-        height: 400px;
+      /* img { */
+      /* width: 100%; */
+      /* height: 400px; */
+      /* } */
+
+      .item {
+        margin-bottom: 20px;
+
+        span {
+          margin-left: 10px;
+          font-weight: 600;
+        }
       }
     }
   }
@@ -113,7 +128,7 @@ const Container = styled.div`
     display: flex;
     column-gap: 30px;
     position: relative;
-    top: -50px;
+    top: 50px;
 
     .item {
       width: 200px;
